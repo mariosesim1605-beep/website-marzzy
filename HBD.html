@@ -1,0 +1,3519 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>Untuk Kamu ❤️</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background: #05091e;
+
+}
+
+
+/* =========================================================
+   SCENE
+========================================================= */
+
+.scene {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    width: 100dvw;
+
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TRANSITION OVERLAY
+========================================================= */
+
+.transition-light {
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,1),
+            rgba(255,255,255,.85),
+            rgba(255,255,255,0)
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.transition-light.flash {
+
+    animation:
+        screenFlash
+        1s
+        ease
+        forwards;
+
+}
+
+
+@keyframes screenFlash {
+
+    0% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: .85;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SCENE AWAL
+========================================================= */
+
+#start {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,255,255,.9),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(190,145,60,.13),
+            transparent 35%
+        ),
+
+        #f5e8c8;
+
+}
+
+
+/* =========================================================
+   KERTAS
+========================================================= */
+
+.paper {
+
+    position: relative;
+
+    width:
+        min(88vw, 650px);
+
+    height:
+        min(82vh, 650px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fffdf3,
+            #f4e4bd
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(80,60,30,.20);
+
+    border-radius: 3px;
+
+    transform:
+        rotate(-1deg);
+
+    animation:
+        paperEnter
+        1.2s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+@keyframes paperEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.85)
+            rotate(-4deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(-1deg);
+
+    }
+
+}
+
+
+.paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border:
+        1px solid
+        rgba(130,100,50,.18);
+
+}
+
+
+.paper-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 80%;
+
+    animation:
+        contentEnter
+        1.4s
+        .25s
+        both;
+
+}
+
+
+@keyframes contentEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.paper-content p {
+
+    color: #7c6847;
+
+    font-size:
+        clamp(15px, 2vw, 19px);
+
+    margin-bottom: 20px;
+
+}
+
+
+.heart {
+
+    border: 0;
+
+    background: none;
+
+    font-size:
+        clamp(65px, 12vw, 100px);
+
+    cursor: pointer;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 7px 10px
+            rgba(120,60,60,.25)
+        );
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.heart:hover {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+.heart:active {
+
+    transform:
+        scale(.85);
+
+}
+
+
+.heart-text {
+
+    color: #8c7350;
+
+    font-size:
+        clamp(13px, 1.8vw, 16px);
+
+    margin-top: 15px;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.13);
+    }
+
+}
+
+
+/* =========================================================
+   LOVE PARTICLES
+========================================================= */
+
+.love-particle {
+
+    position: fixed;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    font-size: 18px;
+
+    animation:
+        loveFly
+        1.2s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes loveFly {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(0,0)
+            scale(.5)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.4)
+            rotate(
+                var(--rotate)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOVE EXIT
+========================================================= */
+
+#start.leaving .paper {
+
+    animation:
+        paperExit
+        1s
+        cubic-bezier(.65,0,.35,1)
+        forwards;
+
+}
+
+
+@keyframes paperExit {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(-1deg);
+
+    }
+
+    40% {
+
+        transform:
+            scale(1.05)
+            rotate(1deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(.2)
+            rotate(12deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   SURAT
+========================================================= */
+
+#letter {
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #fffef8,
+            #eeddb6
+        );
+
+}
+
+
+#letter.entering {
+
+    animation:
+        letterSceneIn
+        1.1s
+        ease
+        both;
+
+}
+
+
+@keyframes letterSceneIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.letter-paper {
+
+    position: relative;
+
+    width:
+        min(90vw, 650px);
+
+    max-height:
+        90dvh;
+
+    overflow-y: auto;
+
+    padding:
+        clamp(35px, 7vw, 65px)
+        clamp(25px, 7vw, 60px);
+
+    background: #fffdf1;
+
+    box-shadow:
+        0 25px 65px
+        rgba(70,50,20,.22);
+
+    transform:
+        rotate(-.8deg);
+
+    animation:
+        letterDrop
+        1.2s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+@keyframes letterDrop {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(80px)
+            scale(.82)
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(-.8deg);
+
+    }
+
+}
+
+
+.letter-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border:
+        1px solid
+        rgba(140,110,60,.18);
+
+    pointer-events: none;
+
+}
+
+
+.letter-paper h1 {
+
+    text-align: center;
+
+    color: #725836;
+
+    font-size:
+        clamp(30px, 6vw, 48px);
+
+    margin-bottom: 30px;
+
+    animation:
+        textReveal
+        1s
+        .3s
+        both;
+
+}
+
+
+.letter-paper p {
+
+    color: #756346;
+
+    text-align: center;
+
+    font-size:
+        clamp(15px, 2vw, 18px);
+
+    line-height: 1.85;
+
+    animation:
+        textReveal
+        1s
+        .55s
+        both;
+
+}
+
+
+@keyframes textReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.next {
+
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding:
+        12px 25px;
+
+    border: 0;
+
+    border-radius: 30px;
+
+    background: #c8a45b;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+
+    animation:
+        buttonEnter
+        1s
+        1s
+        both;
+
+}
+
+
+.next:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(120,90,30,.25);
+
+}
+
+
+.next:active {
+
+    transform:
+        scale(.94);
+
+}
+
+
+@keyframes buttonEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SURAT EXIT
+========================================================= */
+
+#letter.leaving .letter-paper {
+
+    animation:
+        letterExit
+        .9s
+        ease
+        forwards;
+
+}
+
+
+@keyframes letterExit {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(-.8deg);
+
+    }
+
+    45% {
+
+        transform:
+            translateY(-15px)
+            scale(1.04)
+            rotate(0);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-120px)
+            scale(.85)
+            rotate(3deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   GUNUNG
+========================================================= */
+
+#mountain {
+
+    display: none;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #05091e 0%,
+            #09112d 42%,
+            #182344 75%,
+            #20283a 100%
+        );
+
+}
+
+
+#mountain.entering {
+
+    animation:
+        mountainReveal
+        2s
+        ease
+        both;
+
+}
+
+
+@keyframes mountainReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(1.08);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   BINTANG LANGIT
+========================================================= */
+
+.sky-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+}
+
+
+.sky-star {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 5px white;
+
+    opacity: 0;
+
+}
+
+
+.sky-star.visible {
+
+    animation:
+        starAppear
+        .8s
+        ease
+        forwards;
+
+}
+
+
+@keyframes starAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   BULAN
+========================================================= */
+
+.moon {
+
+    position: absolute;
+
+    z-index: 3;
+
+    top:
+        clamp(7%, 10vh, 13%);
+
+    right:
+        clamp(7%, 10vw, 13%);
+
+    width:
+        clamp(55px, 9vw, 100px);
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: #fff5c4;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,245,196,.7),
+
+        0 0 60px
+        rgba(255,245,196,.25);
+
+    opacity: 0;
+
+    transform:
+        translateY(-40px)
+        scale(.7);
+
+}
+
+
+#mountain.entering .moon {
+
+    animation:
+        moonEnter
+        1.5s
+        1s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+@keyframes moonEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.moon::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background: #080d28;
+
+    left: 25%;
+    top: -10%;
+
+}
+
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.mountain-title {
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 13%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow:
+        0 2px 15px
+        rgba(0,0,0,.7);
+
+    opacity: 0;
+
+}
+
+
+#mountain.entering .mountain-title {
+
+    animation:
+        titleEnter
+        1.2s
+        1.4s
+        ease
+        forwards;
+
+}
+
+
+@keyframes titleEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+}
+
+
+.mountain-title h2 {
+
+    font-weight: normal;
+
+    font-size:
+        clamp(23px, 4vw, 40px);
+
+}
+
+
+.mountain-title p {
+
+    margin-top: 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size:
+        clamp(12px, 1.8vw, 15px);
+
+    opacity: .7;
+
+}
+
+
+/* =========================================================
+   GUNUNG
+========================================================= */
+
+.mountain-back {
+
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 29%;
+
+    left: -10%;
+
+    width: 120%;
+
+    height: 35%;
+
+    background: #182541;
+
+    clip-path:
+        polygon(
+            0 100%,
+            12% 48%,
+            22% 72%,
+            35% 30%,
+            45% 63%,
+            57% 20%,
+            68% 58%,
+            78% 35%,
+            90% 70%,
+            100% 40%,
+            100% 100%
+        );
+
+    transform:
+        translateY(80px);
+
+    opacity: 0;
+
+}
+
+
+#mountain.entering .mountain-back {
+
+    animation:
+        mountainBackEnter
+        1.5s
+        .7s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+@keyframes mountainBackEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.mountain-front {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 19%;
+
+    left: -10%;
+
+    width: 120%;
+
+    height: 35%;
+
+    background: #0c172b;
+
+    clip-path:
+        polygon(
+            0 100%,
+            15% 55%,
+            28% 75%,
+            40% 35%,
+            51% 65%,
+            63% 25%,
+            75% 70%,
+            88% 45%,
+            100% 65%,
+            100% 100%
+        );
+
+    transform:
+        translateY(100px);
+
+    opacity: 0;
+
+}
+
+
+#mountain.entering .mountain-front {
+
+    animation:
+        mountainFrontEnter
+        1.5s
+        .9s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+@keyframes mountainFrontEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   LAMPU
+========================================================= */
+
+.city-lights {
+
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 27%;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 18%;
+
+}
+
+
+.city-light {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #eacb70;
+
+    box-shadow:
+        0 0 5px #eacb70;
+
+    opacity: 0;
+
+}
+
+
+.city-light.visible {
+
+    animation:
+        lightAppear
+        .8s
+        ease
+        forwards;
+
+}
+
+
+@keyframes lightAppear {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: .9;
+
+    }
+
+}
+
+
+/* =========================================================
+   POHON
+========================================================= */
+
+.tree {
+
+    position: absolute;
+
+    z-index: 8;
+
+    left: -20px;
+
+    bottom: 8%;
+
+    width: 130px;
+
+    height: 280px;
+
+    opacity: 0;
+
+    transform:
+        translateX(-40px);
+
+}
+
+
+#mountain.entering .tree {
+
+    animation:
+        treeEnter
+        1.2s
+        1.1s
+        ease
+        forwards;
+
+}
+
+
+@keyframes treeEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+.tree-trunk {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 45%;
+
+    width: 18px;
+
+    height: 65%;
+
+    background: #070a12;
+
+    transform:
+        rotate(7deg);
+
+}
+
+
+.tree-branch {
+
+    position: absolute;
+
+    width: 12px;
+
+    height: 120px;
+
+    background: #070a12;
+
+    bottom: 35%;
+
+    left: 45%;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+/* =========================================================
+   TANAH
+========================================================= */
+
+.ground {
+
+    position: absolute;
+
+    z-index: 7;
+
+    bottom: 0;
+
+    left: -5%;
+
+    width: 110%;
+
+    height: 25%;
+
+    background: #080c17;
+
+    clip-path:
+        polygon(
+            0 35%,
+            15% 22%,
+            30% 30%,
+            45% 12%,
+            58% 25%,
+            72% 15%,
+            87% 30%,
+            100% 20%,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+/* =========================================================
+   PASANGAN
+========================================================= */
+
+.couple {
+
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 9%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(100px)
+        scale(.95);
+
+    width: 270px;
+
+    height: 360px;
+
+    opacity: 0;
+
+}
+
+
+#mountain.entering .couple {
+
+    animation:
+        coupleEnter
+        1.5s
+        1.7s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+@keyframes coupleEnter {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   COWOK
+========================================================= */
+
+.man {
+
+    position: absolute;
+
+    left: 52%;
+
+    bottom: 0;
+
+    width: 100px;
+
+    height: 330px;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.man-head {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 25px;
+
+    width: 57px;
+
+    height: 67px;
+
+    background: #010207;
+
+    border-radius:
+        48%
+        48%
+        45%
+        45%;
+
+}
+
+
+.man-head::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -5px;
+
+    left: 2px;
+
+    width: 53px;
+
+    height: 30px;
+
+    background: #000106;
+
+    border-radius:
+        50%
+        50%
+        20%
+        20%;
+
+}
+
+
+.man-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -12px;
+
+    left: 22px;
+
+    width: 20px;
+
+    height: 20px;
+
+    background: #010207;
+
+}
+
+
+.man-body {
+
+    position: absolute;
+
+    top: 68px;
+
+    left: 14px;
+
+    width: 75px;
+
+    height: 145px;
+
+    background: #010207;
+
+    border-radius:
+        30px
+        30px
+        10px
+        10px;
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+.man-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -10px;
+
+    width: 95px;
+
+    height: 35px;
+
+    background: #010207;
+
+    border-radius: 50%;
+
+}
+
+
+.man-body::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -24px;
+
+    top: 13px;
+
+    width: 27px;
+
+    height: 120px;
+
+    background: #010207;
+
+    border-radius: 20px;
+
+    transform:
+        rotate(-5deg);
+
+}
+
+
+.man-leg {
+
+    position: absolute;
+
+    top: 195px;
+
+    width: 30px;
+
+    height: 135px;
+
+    background: #000106;
+
+    border-radius:
+        12px
+        12px
+        8px
+        8px;
+
+}
+
+
+.man-leg.left {
+    left: 21px;
+}
+
+
+.man-leg.right {
+    right: 21px;
+}
+
+
+.man-leg::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -3px;
+
+    width: 45px;
+
+    height: 15px;
+
+    background: #000106;
+
+    border-radius: 50%;
+
+}
+
+
+.man-leg.left::after {
+    left: -5px;
+}
+
+
+.man-leg.right::after {
+    right: -5px;
+}
+
+
+/* =========================================================
+   CEWEK
+========================================================= */
+
+.woman {
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 0;
+
+    width: 95px;
+
+    height: 315px;
+
+    z-index: 3;
+
+}
+
+
+.woman-head {
+
+    position: absolute;
+
+    top: 13px;
+
+    left: 24px;
+
+    width: 55px;
+
+    height: 64px;
+
+    background: #010207;
+
+    border-radius: 48%;
+
+    transform:
+        rotate(25deg);
+
+    transform-origin:
+        bottom right;
+
+}
+
+
+.woman-hair {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 8px;
+
+    width: 73px;
+
+    height: 105px;
+
+    background: #000106;
+
+    border-radius:
+        48%
+        48%
+        42%
+        42%;
+
+}
+
+
+.woman-hair::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+
+    top: 55px;
+
+    width: 28px;
+
+    height: 80px;
+
+    background: #000106;
+
+    border-radius:
+        0
+        0
+        30px
+        30px;
+
+    transform:
+        rotate(7deg);
+
+}
+
+
+.woman-head::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -10px;
+
+    left: 22px;
+
+    width: 19px;
+
+    height: 22px;
+
+    background: #010207;
+
+}
+
+
+.woman-body {
+
+    position: absolute;
+
+    top: 76px;
+
+    left: 15px;
+
+    width: 70px;
+
+    height: 145px;
+
+    background: #010207;
+
+    border-radius:
+        30px
+        30px
+        8px
+        8px;
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.woman-body::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -19px;
+
+    top: 12px;
+
+    width: 22px;
+
+    height: 105px;
+
+    background: #010207;
+
+    border-radius: 20px;
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.woman-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -9px;
+
+    bottom: -1px;
+
+    width: 88px;
+
+    height: 80px;
+
+    background: #010207;
+
+    clip-path:
+        polygon(
+            15% 0,
+            85% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+.woman-leg {
+
+    position: absolute;
+
+    top: 205px;
+
+    width: 24px;
+
+    height: 110px;
+
+    background: #000106;
+
+    border-radius: 15px;
+
+}
+
+
+.woman-leg.left {
+    left: 27px;
+}
+
+
+.woman-leg.right {
+    left: 52px;
+}
+
+
+/* =========================================================
+   LENTERA
+========================================================= */
+
+.lantern {
+
+    position: absolute;
+
+    z-index: 25;
+
+    bottom: 15%;
+
+    left: 23%;
+
+    width: 18px;
+
+    height: 27px;
+
+    border:
+        2px solid
+        #17120c;
+
+    background: #e7b95c;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,194,76,.8);
+
+    opacity: 0;
+
+}
+
+
+#mountain.entering .lantern {
+
+    animation:
+        lanternEnter
+        1s
+        1.5s
+        ease
+        forwards;
+
+}
+
+
+@keyframes lanternEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+.lantern::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+
+    top: -8px;
+
+    width: 6px;
+
+    height: 8px;
+
+    border-left:
+        2px solid #17120c;
+
+    border-right:
+        2px solid #17120c;
+
+}
+
+
+/* =========================================================
+   BINTANG BESAR
+========================================================= */
+
+.big-shooting-star {
+
+    position: absolute;
+
+    z-index: 80;
+
+    top: 42%;
+
+    left: 76%;
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+
+        0 0 12px white,
+
+        0 0 30px white,
+
+        0 0 65px #bcd5ff,
+
+        0 0 110px
+        rgba(130,170,255,.9);
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.big-shooting-star.active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    animation:
+        starPulse
+        1.4s
+        infinite
+        alternate;
+
+}
+
+
+@keyframes starPulse {
+
+    from {
+
+        filter:
+            brightness(1);
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+    to {
+
+        filter:
+            brightness(1.8);
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.25);
+
+    }
+
+}
+
+
+/* ekor */
+
+.big-shooting-star::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 5px;
+
+    right: 7px;
+
+    top: 12px;
+
+    background:
+
+        linear-gradient(
+            to left,
+            white,
+            rgba(255,255,255,.65),
+            transparent
+        );
+
+    transform:
+        rotate(-35deg);
+
+    transform-origin:
+        right center;
+
+    filter:
+        blur(.5px);
+
+}
+
+
+/* halo */
+
+.big-shooting-star::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(180,210,255,.13);
+
+    filter:
+        blur(10px);
+
+}
+
+
+/* =========================================================
+   PETUNJUK
+========================================================= */
+
+.star-hint {
+
+    position: absolute;
+
+    z-index: 81;
+
+    top: 49%;
+
+    left: 68%;
+
+    color: white;
+
+    font-size:
+        clamp(13px,2vw,17px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease;
+
+    text-shadow:
+        0 2px 8px black;
+
+    white-space: nowrap;
+
+}
+
+
+.star-hint.show {
+
+    opacity: .9;
+
+}
+
+
+.star-hint::after {
+
+    content:
+        "  ↗";
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   STAR BURST
+========================================================= */
+
+.star-burst {
+
+    position: absolute;
+
+    z-index: 90;
+
+    left: 76%;
+
+    top: 42%;
+
+    width: 20px;
+
+    height: 20px;
+
+    pointer-events: none;
+
+}
+
+
+.star-piece {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white;
+
+    animation:
+        burst
+        1.2s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes burst {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--bx),
+                var(--by)
+            )
+            scale(.2);
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+#final {
+
+    display: none;
+
+    position: absolute;
+
+    z-index: 100;
+
+    inset: 0;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(3,6,15,.84);
+
+    opacity: 0;
+
+}
+
+
+#final.show {
+
+    animation:
+        finalScene
+        1.3s
+        ease
+        forwards;
+
+}
+
+
+@keyframes finalScene {
+
+    from {
+
+        opacity: 0;
+
+        backdrop-filter:
+            blur(0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        backdrop-filter:
+            blur(5px);
+
+    }
+
+}
+
+
+.final-box {
+
+    width:
+        min(88vw,650px);
+
+    max-height:
+        85dvh;
+
+    overflow-y: auto;
+
+    padding:
+        clamp(30px,6vw,50px);
+
+    text-align: center;
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    background:
+        rgba(8,14,30,.65);
+
+    backdrop-filter:
+        blur(5px);
+
+    opacity: 0;
+
+}
+
+
+#final.show .final-box {
+
+    animation:
+        finalBoxEnter
+        1.2s
+        .4s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+
+@keyframes finalBoxEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.final-box h2 {
+
+    font-weight: normal;
+
+    font-size:
+        clamp(27px,6vw,45px);
+
+    margin-bottom: 25px;
+
+}
+
+
+.final-box p {
+
+    font-family: Arial, sans-serif;
+
+    font-size:
+        clamp(14px,2vw,18px);
+
+    line-height: 1.9;
+
+    color: #e9ebf2;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HP
+========================================================= */
+
+@media (max-width:600px) {
+
+    .paper {
+
+        width: 88vw;
+
+        height: 75vh;
+
+    }
+
+
+    .letter-paper {
+
+        width: 88vw;
+
+    }
+
+
+    .mountain-title {
+
+        top: 14%;
+
+    }
+
+
+    .mountain-title h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .couple {
+
+        transform:
+            translateX(-50%)
+            translateY(100px)
+            scale(.72);
+
+    }
+
+
+    #mountain.entering .couple {
+
+        animation:
+            coupleEnterMobile
+            1.5s
+            1.7s
+            cubic-bezier(.22,1,.36,1)
+            forwards;
+
+    }
+
+
+    @keyframes coupleEnterMobile {
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateX(-50%)
+                translateY(0)
+                scale(.72);
+
+        }
+
+    }
+
+
+    .lantern {
+
+        left: 16%;
+
+    }
+
+
+    .tree {
+
+        transform:
+            translateX(-40px)
+            scale(.8);
+
+        transform-origin:
+            bottom left;
+
+    }
+
+
+    .big-shooting-star {
+
+        left: 73%;
+
+        top: 43%;
+
+        width: 25px;
+
+        height: 25px;
+
+    }
+
+
+    .star-hint {
+
+        top: 50%;
+
+        left: 54%;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   HP LANDSCAPE
+========================================================= */
+
+@media (
+    max-height:500px
+)
+and (orientation:landscape) {
+
+    .paper {
+
+        height: 82vh;
+
+    }
+
+
+    .letter-paper {
+
+        max-height: 84vh;
+
+        padding:
+            25px 45px;
+
+    }
+
+
+    .letter-paper h1 {
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .letter-paper p {
+
+        line-height: 1.5;
+
+    }
+
+
+    .mountain-title {
+
+        top: 7%;
+
+    }
+
+
+    .mountain-title h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .couple {
+
+        height: 72vh;
+
+    }
+
+
+    .ground {
+
+        height: 27%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     OVERLAY FLASH
+======================================================= -->
+
+<div
+    id="transitionLight"
+    class="transition-light">
+</div>
+
+
+
+<!-- =======================================================
+     SCENE 1
+======================================================= -->
+
+<section
+    id="start"
+    class="scene">
+
+
+    <div class="paper">
+
+        <div class="paper-content">
+
+            <p>
+                Ada sesuatu buat kamu...
+            </p>
+
+
+            <button
+                id="heartButton"
+                class="heart"
+                onclick="openLetter()">
+
+                ❤️
+
+            </button>
+
+
+            <div class="heart-text">
+
+                Klik hatinya
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     SCENE 2 — SURAT
+======================================================= -->
+
+<section
+    id="letter"
+    class="scene">
+
+
+    <div class="letter-paper">
+
+        <h1>
+            Happy Birthday ❤️
+        </h1>
+
+
+        <p>
+
+            Selamat ulang tahun ya, cantik.
+
+            <br><br>
+
+            Hari ini mungkin cuma hari biasa
+            buat orang lain, tapi buat aku,
+            hari ini sedikit berbeda.
+
+            <br><br>
+
+            Karena di hari ini,
+            seseorang yang berarti buat aku
+            lahir ke dunia.
+
+            <br><br>
+
+            Semoga di umur yang baru,
+            lebih banyak hal baik yang datang
+            ke kamu.
+
+            Lebih banyak alasan buat senyum,
+            dan lebih sedikit hal yang bikin
+            kamu kepikiran.
+
+            <br><br>
+
+            Tapi...
+
+            kayaknya ada satu hal lagi
+            yang pengen aku tunjukin.
+
+        </p>
+
+
+        <button
+            class="next"
+            onclick="openMountain()">
+
+            Lanjut →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     SCENE 3 — GUNUNG
+======================================================= -->
+
+<section
+    id="mountain"
+    class="scene">
+
+
+    <div
+        id="stars"
+        class="sky-stars">
+    </div>
+
+
+    <div class="moon"></div>
+
+
+    <div class="mountain-title">
+
+        <h2>
+            Selamat ulang tahun ya, cantik ❤️
+        </h2>
+
+        <p>
+            Coba lihat langitnya sebentar...
+        </p>
+
+    </div>
+
+
+    <div class="mountain-back"></div>
+
+    <div class="mountain-front"></div>
+
+
+    <div
+        id="cityLights"
+        class="city-lights">
+    </div>
+
+
+    <div class="tree">
+
+        <div class="tree-trunk"></div>
+
+        <div class="tree-branch"></div>
+
+    </div>
+
+
+    <div class="lantern"></div>
+
+
+    <!-- ===================================================
+         PASANGAN
+    ==================================================== -->
+
+    <div class="couple">
+
+
+        <div class="man">
+
+            <div class="man-head"></div>
+
+            <div class="man-body"></div>
+
+            <div
+                class="man-leg left">
+            </div>
+
+            <div
+                class="man-leg right">
+            </div>
+
+        </div>
+
+
+        <div class="woman">
+
+            <div class="woman-hair"></div>
+
+            <div class="woman-head"></div>
+
+            <div class="woman-body"></div>
+
+            <div
+                class="woman-leg left">
+            </div>
+
+            <div
+                class="woman-leg right">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="ground"></div>
+
+
+    <!-- BINTANG BESAR -->
+
+    <div
+        id="bigStar"
+        class="big-shooting-star"
+        onclick="openFinal()">
+    </div>
+
+
+    <div
+        id="starHint"
+        class="star-hint">
+
+        Ada sesuatu di sana...
+
+    </div>
+
+
+    <!-- ===================================================
+         PESAN TERAKHIR
+    ==================================================== -->
+
+    <div id="final">
+
+        <div class="final-box">
+
+            <h2>
+                Untuk kamu ♡
+            </h2>
+
+
+            <p>
+
+                Aku nggak tahu bakal ada berapa banyak
+                ulang tahun yang bisa kita lewatin bareng.
+
+                <br><br>
+
+                Tapi kalau boleh berharap,
+                aku pengen tetap ada di salah satunya.
+
+                <br><br>
+
+                Semoga di umur yang baru ini,
+                lebih banyak hal baik yang datang ke kamu.
+                Lebih banyak alasan buat senyum,
+                dan lebih sedikit hal yang bikin kamu sedih.
+
+                <br><br>
+
+                Kalau suatu hari kamu lagi capek
+                sama semuanya, semoga kamu selalu ingat
+                kalau ada seseorang yang senang banget
+                cuma karena bisa lihat kamu bahagia.
+
+                <br><br>
+
+                Aku mungkin nggak selalu tahu
+                harus ngomong apa,
+                tapi satu hal yang pasti...
+
+                <br><br>
+
+                Aku senang pernah menemukan kamu.
+
+                <br><br>
+
+                Selamat ulang tahun, cantik.
+
+                <br>
+
+                Semoga tahun ini baik sama kamu. ❤️
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   UTILITY
+========================================================= */
+
+function flashScreen() {
+
+    const flash =
+        document.getElementById(
+            "transitionLight"
+        );
+
+
+    flash.classList.remove("flash");
+
+
+    void flash.offsetWidth;
+
+
+    flash.classList.add("flash");
+
+}
+
+
+/* =========================================================
+   LOVE PARTICLES
+========================================================= */
+
+function createLoveParticles() {
+
+    const heart =
+        document.getElementById(
+            "heartButton"
+        );
+
+
+    const rect =
+        heart.getBoundingClientRect();
+
+
+    const centerX =
+        rect.left +
+        rect.width / 2;
+
+
+    const centerY =
+        rect.top +
+        rect.height / 2;
+
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "♡",
+        "♥"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 16;
+        i++
+    ) {
+
+        const particle =
+            document.createElement("div");
+
+
+        particle.className =
+            "love-particle";
+
+
+        particle.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        particle.style.left =
+            centerX + "px";
+
+
+        particle.style.top =
+            centerY + "px";
+
+
+        particle.style.setProperty(
+            "--x",
+            (
+                Math.random() * 260 - 130
+            ) + "px"
+        );
+
+
+        particle.style.setProperty(
+            "--y",
+            (
+                Math.random() * 260 - 180
+            ) + "px"
+        );
+
+
+        particle.style.setProperty(
+            "--rotate",
+            (
+                Math.random() * 360
+            ) + "deg"
+        );
+
+
+        particle.style.animationDelay =
+            (
+                Math.random() * .2
+            ) + "s";
+
+
+        document.body.appendChild(
+            particle
+        );
+
+
+        setTimeout(
+            () => particle.remove(),
+            1500
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   BUKA SURAT
+========================================================= */
+
+function openLetter() {
+
+    createLoveParticles();
+
+    flashScreen();
+
+
+    const start =
+        document.getElementById(
+            "start"
+        );
+
+
+    start.classList.add(
+        "leaving"
+    );
+
+
+    setTimeout(function() {
+
+        start.style.display =
+            "none";
+
+
+        const letter =
+            document.getElementById(
+                "letter"
+            );
+
+
+        letter.style.display =
+            "flex";
+
+
+        letter.classList.add(
+            "entering"
+        );
+
+
+    }, 850);
+
+}
+
+
+/* =========================================================
+   BUKA GUNUNG
+========================================================= */
+
+function openMountain() {
+
+    flashScreen();
+
+
+    const letter =
+        document.getElementById(
+            "letter"
+        );
+
+
+    letter.classList.add(
+        "leaving"
+    );
+
+
+    setTimeout(function() {
+
+        letter.style.display =
+            "none";
+
+
+        const mountain =
+            document.getElementById(
+                "mountain"
+            );
+
+
+        mountain.style.display =
+            "block";
+
+
+        mountain.classList.add(
+            "entering"
+        );
+
+
+        createStars();
+
+        createCityLights();
+
+
+        /*
+           Tunggu 5 detik
+           sebelum bintang besar muncul.
+        */
+
+        setTimeout(function() {
+
+            const star =
+                document.getElementById(
+                    "bigStar"
+                );
+
+
+            const hint =
+                document.getElementById(
+                    "starHint"
+                );
+
+
+            star.classList.add(
+                "active"
+            );
+
+
+            setTimeout(function() {
+
+                hint.classList.add(
+                    "show"
+                );
+
+            }, 500);
+
+
+        }, 5000);
+
+
+    }, 850);
+
+}
+
+
+/* =========================================================
+   BINTANG LANGIT
+========================================================= */
+
+function createStars() {
+
+    const container =
+        document.getElementById(
+            "stars"
+        );
+
+
+    if (
+        container.children.length > 0
+    ) {
+
+        return;
+
+    }
+
+
+    for (
+        let i = 0;
+        i < 130;
+        i++
+    ) {
+
+        const star =
+            document.createElement(
+                "div"
+            );
+
+
+        star.className =
+            "sky-star";
+
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+
+        star.style.top =
+            Math.random() * 68 + "%";
+
+
+        const size =
+            Math.random() * 2.5 + 1;
+
+
+        star.style.width =
+            size + "px";
+
+
+        star.style.height =
+            size + "px";
+
+
+        container.appendChild(
+            star
+        );
+
+
+        /*
+           Bintang muncul satu-satu.
+        */
+
+        setTimeout(function() {
+
+            star.classList.add(
+                "visible"
+            );
+
+        }, Math.random() * 1800);
+
+    }
+
+}
+
+
+/* =========================================================
+   LAMPU KOTA
+========================================================= */
+
+function createCityLights() {
+
+    const container =
+        document.getElementById(
+            "cityLights"
+        );
+
+
+    if (
+        container.children.length > 0
+    ) {
+
+        return;
+
+    }
+
+
+    for (
+        let i = 0;
+        i < 55;
+        i++
+    ) {
+
+        const light =
+            document.createElement(
+                "div"
+            );
+
+
+        light.className =
+            "city-light";
+
+
+        light.style.left =
+            Math.random() * 100 + "%";
+
+
+        light.style.top =
+            Math.random() * 100 + "%";
+
+
+        const size =
+            Math.random() * 3 + 2;
+
+
+        light.style.width =
+            size + "px";
+
+
+        light.style.height =
+            size + "px";
+
+
+        container.appendChild(
+            light
+        );
+
+
+        setTimeout(function() {
+
+            light.classList.add(
+                "visible"
+            );
+
+        }, 700 + Math.random() * 1800);
+
+    }
+
+}
+
+
+/* =========================================================
+   STAR BURST
+========================================================= */
+
+function createStarBurst() {
+
+    const burst =
+        document.createElement(
+            "div"
+        );
+
+
+    burst.className =
+        "star-burst";
+
+
+    for (
+        let i = 0;
+        i < 28;
+        i++
+    ) {
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "star-piece";
+
+
+        const angle =
+            Math.random() *
+            Math.PI *
+            2;
+
+
+        const distance =
+            80 +
+            Math.random() * 180;
+
+
+        const x =
+            Math.cos(angle) *
+            distance;
+
+
+        const y =
+            Math.sin(angle) *
+            distance;
+
+
+        piece.style.setProperty(
+            "--bx",
+            x + "px"
+        );
+
+
+        piece.style.setProperty(
+            "--by",
+            y + "px"
+        );
+
+
+        burst.appendChild(
+            piece
+        );
+
+    }
+
+
+    document
+        .getElementById("mountain")
+        .appendChild(burst);
+
+
+    setTimeout(function() {
+
+        burst.remove();
+
+    }, 1400);
+
+}
+
+
+/* =========================================================
+   BINTANG DIKLIK
+========================================================= */
+
+function openFinal() {
+
+    createStarBurst();
+
+    flashScreen();
+
+
+    const star =
+        document.getElementById(
+            "bigStar"
+        );
+
+
+    const hint =
+        document.getElementById(
+            "starHint"
+        );
+
+
+    star.style.pointerEvents =
+        "none";
+
+
+    star.style.opacity =
+        "0";
+
+
+    hint.style.opacity =
+        "0";
+
+
+    setTimeout(function() {
+
+        const final =
+            document.getElementById(
+                "final"
+            );
+
+
+        final.style.display =
+            "flex";
+
+
+        final.classList.add(
+            "show"
+        );
+
+
+    }, 650);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
